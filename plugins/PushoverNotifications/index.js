@@ -42,7 +42,7 @@ exports.load = function(quasselClient, cb) {
 					if (message.isSelf())
 						return;
 
-					if (buffer.type == BufferType.ChannelBuffer && message.isHighlighted()) {
+					if (message.isHighlighted()) {
 						// var data = buildNotification(buffer, message);
 						// sendNotification(data.type, data.title, data.body);
 						pusher.queueNotification(buffer, message, quasselClient.userConfig.pushover.sound);
