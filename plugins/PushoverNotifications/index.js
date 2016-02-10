@@ -45,7 +45,7 @@ exports.load = function(quasselClient, cb) {
 					if (buffer.type == BufferType.ChannelBuffer && message.isHighlighted()) {
 						// var data = buildNotification(buffer, message);
 						// sendNotification(data.type, data.title, data.body);
-						//pusher.queueNotification(buffer, message, quasselClient.userConfig.pushover.sound);
+						pusher.queueNotification(buffer, message, quasselClient.userConfig.pushover.sound);
 					} else if ((highlight = getRegexHighlight(buffer, message)) !== null) {
 						pusher.queueNotification(buffer, message, highlight.sound);
 					}
